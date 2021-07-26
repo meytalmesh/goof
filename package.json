@@ -35,6 +35,7 @@
     "lodash": "4.17.20",
     "marked": "0.3.18",
     "method-override": "latest",
+    "exiftool-vendored.pl": "12.19.0",
     "moment": "2.15.1",
     "mongoose": "5.12.3",
     "morgan": "latest",

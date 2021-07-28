@@ -9,9 +9,9 @@ jobs:
       - name: Snyk auth
         uses: snyk/actions@0.3.0
         env:
-          SNYK_TOKEN: 0a4366c1-d6bc-467a-b1b5-bae574f6d8cc
+          SNYK_TOKEN: 3f1a12a9-3b79-413a-8e9c-ceb0f8949176
         with:
-          command: auth 
+          command: snyk auth 
           
       - name: Snyk test
         uses: snyk/actions@0.3.0

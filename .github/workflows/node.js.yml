@@ -5,17 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-          
-      - name: Snyk auth
-        uses: snyk/actions@0.3.0
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
         env:
-          SNYK_TOKEN: 3f1a12a9-3b79-413a-8e9c-ceb0f8949176
+          SNYK_TOKEN: ${SNYK_TOKEN}
         with:
-          command: snyk auth 
-          
-      - name: Snyk test
-        uses: snyk/actions@0.3.0
-        with:
-          command: test 
+          command: monitor
           
 

@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@master
        
       - name: Snyk
-        run: snyk auth 3f1a12a9-3b79-413a-8e9c-ceb0f8949176
+
 
         
 

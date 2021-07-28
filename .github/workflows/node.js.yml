@@ -4,12 +4,22 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+    
       - uses: actions/checkout@master
+       
+      - name: Install dependencies
+        run: npm i -g snyk
+        
+        
+      - name: snyk test
+        run: ./snyk monitor
+        
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${SNYK_TOKEN}
         with:
           command: monitor
+          
           
 

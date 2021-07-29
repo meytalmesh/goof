@@ -6,6 +6,10 @@ jobs:
     
     steps:
       - uses: actions/checkout@master
+      
+      - name: npm install
+        run:  npm install
+        
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
@@ -13,9 +17,6 @@ jobs:
         with:
           args: --severity-threshold=high
           
-      - name: npm install
-        run:  npm install
-        
       - name: snyk install
         run:  npm install snyk
         

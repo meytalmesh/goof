@@ -1,8 +1,16 @@
-name: Example of a snyk code test in a workflow
-on: 
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI + snyk install and test
+
+on:
   push:
-    branches: [master]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
+ 
   security:
     runs-on: ubuntu-latest
     steps:
@@ -13,18 +21,9 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --file=package.json
-          json: true
-           #       --severity-threshold=high 
-          command: code test  
-
-      - uses: garethr/snyk-to-sarif@master
-      - uses: actions/upload-artifact@v2
-        with:
-          name: SARIF
-          
-          path: snyk.sarif
-      - name: Upload the SARIF file
+          args: --sarif-file-output=snyk.sarif
+                --severity-threshold=high
+      - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: snyk.sarif

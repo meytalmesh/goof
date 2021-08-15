@@ -14,7 +14,8 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: '. --sarif --output result.sarif || true'
-           #       --severity-threshold=high    
+           #       --severity-threshold=high 
+          json: true
           command: code test  
 
       - uses: garethr/snyk-to-sarif@master

@@ -37,7 +37,7 @@
     "method-override": "latest",
     "exiftool-vendored.pl": "12.19.0",
     "moment": "2.15.1",
-    "mongoose": "5.12.3",
+    "mongoose": "6.0.4",
     "morgan": "latest",
     "ms": "^0.7.1",
     "npmconf": "1.0.1",

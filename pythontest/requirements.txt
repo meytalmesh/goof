@@ -1,4 +1,4 @@
-fiona==1.8.13.post1
+fiona==1.10b2.post1
 appnope==0.1.0
 backcall==0.1.0
 beautifulsoup4==4.6.3
